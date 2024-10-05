@@ -9,6 +9,9 @@ import bg2 from "../assets/images/bg/bg2.jpg";
 import bg3 from "../assets/images/bg/bg3.jpg";
 import bg4 from "../assets/images/bg/bg4.jpg";
 
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
+
 const BlogData = [
   {
     image: bg1,
@@ -45,6 +48,13 @@ const BlogData = [
 ];
 
 const Starter = () => {
+  const [hello, setHello] = useState('')
+
+  useEffect(() => {
+      axios.get('/api/hello')
+      .then(response => setHello(response.data))
+      .catch(error => console.log(error))
+  }, []);
   return (
     <div>
       {/***Top Cards***/}
@@ -115,8 +125,15 @@ const Starter = () => {
           </Col>
         ))}
       </Row>
+        <div>
+            백엔드에서 가져온 데이터입니다 : {hello}
+        </div>
     </div>
   );
 };
+
+
+
+    
 
 export default Starter;
