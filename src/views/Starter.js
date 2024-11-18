@@ -1,8 +1,10 @@
 import { Col, Row } from "reactstrap";
 import SalesChart from "../components/dashboard/SalesChart";
+import LGChart from "../components/dashboard/LGChart";
 import Feeds from "../components/dashboard/Feeds";
 import ProjectTables from "../components/dashboard/ProjectTable";
 import TopCards from "../components/dashboard/TopCards";
+import AAPLChart from "../components/dashboard/AAPLChart";
 import Blog from "../components/dashboard/Blog";
 import bg1 from "../assets/images/bg/bg1.jpg";
 import bg2 from "../assets/images/bg/bg2.jpg";
@@ -58,7 +60,7 @@ const Starter = () => {
   return (
     <div>
       {/***Top Cards***/}
-      <Row>
+      {/* <Row>
         <Col sm="6" lg="3">
           <TopCards
             bg="bg-light-success text-success"
@@ -95,24 +97,39 @@ const Starter = () => {
             icon="bi bi-bag"
           />
         </Col>
+      </Row> */}
+      {/*** LGChart ***/}
+      {/* <Row>
+        <Col sm="12" lg="12" xl="12" xxl="12">
+          <LGChart /> <br></br>
+        </Col>
+      </Row> */}
+      {/*** AAPLChart ***/}
+      <Row>
+        <Col sm="12" lg="12" xl="12" xxl="12">
+          <AAPLChart /> <br></br>
+        </Col>
       </Row>
       {/***Sales & Feed***/}
-      <Row>
+      {/* <Row>
         <Col sm="6" lg="6" xl="7" xxl="8">
           <SalesChart />
         </Col>
         <Col sm="6" lg="6" xl="5" xxl="4">
           <Feeds />
         </Col>
-      </Row>
+      </Row> */}
       {/***Table ***/}
       <Row>
-        <Col lg="12">
+        <Col sm="6" lg="6" xl="7" xxl="8">
           <ProjectTables />
+        </Col>
+        <Col sm="6" lg="6" xl="5" xxl="4">
+          <Feeds />
         </Col>
       </Row>
       {/***Blog Cards***/}
-      <Row>
+      {/* <Row>
         {BlogData.map((blg, index) => (
           <Col sm="6" lg="6" xl="3" key={index}>
             <Blog
@@ -124,10 +141,10 @@ const Starter = () => {
             />
           </Col>
         ))}
-      </Row>
-        <div>
+      </Row> */}
+        {/* <div>
             백엔드에서 가져온 데이터입니다 : {hello}
-        </div>
+        </div> */}
     </div>
   );
 };

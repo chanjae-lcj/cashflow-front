@@ -28,13 +28,13 @@ const Header = () => {
     document.getElementById("sidebarArea").classList.toggle("showSidebar");
   };
   return (
-    <Navbar color="primary" dark expand="md">
+    <Navbar color="secondary" dark expand="md">
       <div className="d-flex align-items-center">
         <NavbarBrand href="/" className="d-lg-none">
           <LogoWhite />
         </NavbarBrand>
         <Button
-          color="primary"
+          color="secondary"
           className="d-lg-none"
           onClick={() => showMobilemenu()}
         >
@@ -43,7 +43,7 @@ const Header = () => {
       </div>
       <div className="hstack gap-2">
         <Button
-          color="primary"
+          color="secondary"
           size="sm"
           className="d-sm-block d-md-none"
           onClick={Handletoggle}
@@ -57,7 +57,7 @@ const Header = () => {
       </div>
 
       <Collapse navbar isOpen={isOpen}>
-        <Nav className="me-auto" navbar>
+        <Nav className="me-auto" navbar color="black">
           <NavItem>
             <Link to="/starter" className="nav-link">
               Starter
@@ -81,7 +81,7 @@ const Header = () => {
           </UncontrolledDropdown>
         </Nav>
         <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-          <DropdownToggle color="primary">
+          <DropdownToggle color="secondary">
             <img
               src={user1}
               alt="profile"
